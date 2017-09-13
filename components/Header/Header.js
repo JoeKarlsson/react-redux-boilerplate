@@ -6,7 +6,7 @@ import {
 class Header extends React.Component {
   render() {
     return (
-      <div>
+      <div className="header">
         <h1>React Reddit</h1>
         <ul role="nav">
           <li><Link to="/">Home</Link></li>
