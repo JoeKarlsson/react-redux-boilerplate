@@ -4,8 +4,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Immutable from 'immutable';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/redditActions';
-import RedditList from './RedditList';
+import { fetchPosts } from '../../../actions/redditActions';
+import RedditList from '../RedditList/RedditList';
+import styles from './RedditPage.scss';
 
 class RedditPage extends React.Component {
   constructor() {

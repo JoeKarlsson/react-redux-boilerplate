@@ -3,7 +3,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
-import { removeItem } from '../../actions/redditActions';
+import { removeItem } from '../../../actions/redditActions';
+import styles from './RedditItem.scss';
+
 
 class RedditItem extends React.Component {
   constructor() {
@@ -19,7 +21,7 @@ class RedditItem extends React.Component {
 
   render() {
     return (
-      <div className='redditItem'>
+      <div className={styles.redditItem}>
         <h3>{ this.props.children }</h3>
         <p>Author: {this.props.author}</p>
         <button

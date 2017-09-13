@@ -2,7 +2,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import RedditItem from './RedditItem';
+import RedditItem from '../RedditItem/RedditItem';
+import styles from './RedditList.scss';
 
 class RedditList extends React.Component {
   render() {
