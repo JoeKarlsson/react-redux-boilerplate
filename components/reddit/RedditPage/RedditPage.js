@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Immutable from 'immutable';
@@ -20,7 +18,7 @@ class RedditPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.RedditPage}>
         <h1>Reddit</h1>
         <RedditList redditData={this.props.redditData} />
       </div>

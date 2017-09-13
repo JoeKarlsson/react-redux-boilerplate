@@ -21,7 +21,7 @@ class RedditItem extends React.Component {
 
   render() {
     return (
-      <div className={styles.redditItem}>
+      <div className={styles.RedditItem}>
         <h3>{ this.props.children }</h3>
         <p>Author: {this.props.author}</p>
         <button

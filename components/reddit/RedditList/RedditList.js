@@ -19,7 +19,7 @@ class RedditList extends React.Component {
       )
     })
     return (
-      <div className='redditList'>
+      <div className={styles.RedditList}>
         <h2>Reddit List</h2>
         { redditListNode }
       </div>
