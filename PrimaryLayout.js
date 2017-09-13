@@ -6,9 +6,9 @@ import {
 import styles from './PrimaryLayout.scss';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import About from './components/static/About';
+import About from './components/static/about/About';
+import NoMatch from './components/static/noMatch/NoMatch';
 import RedditPage from './components/reddit/RedditPage/RedditPage';
-import NoMatch from './components/static/NoMatch';
 
 class PrimaryLayout extends React.Component {
   render() {
