@@ -1,8 +1,7 @@
 import React from 'react';
-import Link from '../shared/Link';
 
 const Footer = () => (
-  <div>
+  <div className='footer'>
     <h2>
       Footer
     </h2>
