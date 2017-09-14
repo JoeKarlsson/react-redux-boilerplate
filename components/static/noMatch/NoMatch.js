@@ -1,9 +1,12 @@
 import React from 'react';
+import styles from './NoMatch.scss';
 
 class NoMatch extends React.Component {
   render() {
     return (
-      <div>No Page Found</div>
+      <div className={styles.noMatch}>
+        No Page Found
+      </div>
     );
   }
 }

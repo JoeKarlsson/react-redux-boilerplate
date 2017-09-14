@@ -1,11 +1,8 @@
-'use strict';
-
 import React from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import { removeItem } from '../../../actions/redditActions';
 import styles from './RedditItem.scss';
-
 
 class RedditItem extends React.Component {
   constructor() {
