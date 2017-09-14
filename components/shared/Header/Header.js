@@ -8,7 +8,7 @@ import styles from './Header.scss';
 class Header extends React.Component {
   render() {
     return (
-      <div className="header">
+      <div className={styles.header}>
         <h1>React Reddit</h1>
         <ul role="nav">
           <li><Link to="/">Home</Link></li>
@@ -17,6 +17,6 @@ class Header extends React.Component {
       </div>
     )
   }
-};
+}
 
 export default Header;

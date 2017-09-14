@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeItem } from '../../../actions/redditActions';
 import styles from './RedditItem.scss';
@@ -8,13 +8,12 @@ class RedditItem extends React.Component {
   constructor() {
     super();
     this.handleDelete = this.handleDelete.bind(this);
-  };
+  }
 
-  handleDelete(e) {
-    const id = e.target.id;
+  handleDelete() {
     const { dispatch, index } = this.props;
     dispatch(removeItem(index));
-  };
+  }
 
   render() {
     return (
@@ -23,18 +22,26 @@ class RedditItem extends React.Component {
         <p>Author: {this.props.author}</p>
         <button
           id={this.props.id}
-          onClick={this.handleDelete} >
+          onClick={this.handleDelete}
+        >
           X
         </button>
       </div>
-    )
+    );
   }
+}
+
+RedditItem.propTypes = {
+  author: PropTypes.string,
+  children: PropTypes.string,
+  dispatch: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return { }
+RedditItem.defaultProps = {
+  redditData: [],
+  author: 'Default',
+  children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum dolorem architecto eos, esse facere quo omnis expedita, impedit officiis! Quisquam officiis recusandae expedita numquam vel in molestias qui placeat esse.'
 };
 
-export default connect(
-  mapStateToProps
-)(RedditItem);
+export default connect()(RedditItem);

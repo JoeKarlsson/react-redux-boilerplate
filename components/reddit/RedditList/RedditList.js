@@ -4,18 +4,22 @@ import RedditItem from '../RedditItem/RedditItem';
 import styles from './RedditList.scss';
 
 class RedditList extends React.Component {
+
+  redditItemNodeBuilder(redditDataItem, index) {
+    return (
+      <RedditItem
+        id={redditDataItem.data.id}
+        index={index}
+        author={redditDataItem.data.author}
+        key={redditDataItem.data.id} >
+        {redditDataItem.data.title}
+      </RedditItem>
+    )
+  }
+
   render() {
-    var redditListNode = this.props.redditData.map(function(redditDataItem, index){
-      return (
-        <RedditItem
-          id={redditDataItem.data.id}
-          index={index}
-          author={redditDataItem.data.author}
-          key={redditDataItem.data.id} >
-          {redditDataItem.data.title}
-        </RedditItem>
-      )
-    })
+    const redditListNode = this.props.redditData.map(this.redditItemNodeBuilder);
+
     return (
       <div className={styles.RedditList}>
         <h2>Reddit List</h2>
@@ -23,6 +27,10 @@ class RedditList extends React.Component {
       </div>
     )
   }
+};
+
+RedditList.propTypes = {
+  redditData: PropTypes.array.isRequired,
 };
 
 export default RedditList;

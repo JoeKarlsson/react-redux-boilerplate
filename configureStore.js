@@ -1,7 +1,7 @@
 import {
   createStore,
   applyMiddleware,
-  combineReducers
+  combineReducers,
 } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
@@ -18,7 +18,7 @@ export default function configureStore(preloadedState) {
     applyMiddleware(
       api,
       thunkMiddleware,
-      loggerMiddleware
-    )
-  )
-};
+      loggerMiddleware,
+    ),
+  );
+}
