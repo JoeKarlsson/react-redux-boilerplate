@@ -15,6 +15,7 @@ module.exports = {
     "env": {
       "browser": false,    // browser global variables.
       "node": true,        // Node.js global variables and Node.js-specific rules.
+      "jest": true,
     },
     "plugins": [
       "import",
