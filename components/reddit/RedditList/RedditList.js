@@ -33,4 +33,8 @@ RedditList.propTypes = {
   redditData: PropTypes.array.isRequired,
 };
 
+RedditList.defaultProps = {
+  redditData: [],
+};
+
 export default RedditList;

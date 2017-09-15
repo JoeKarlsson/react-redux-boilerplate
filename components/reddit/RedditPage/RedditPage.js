@@ -5,7 +5,7 @@ import { fetchPosts } from '../../../actions/redditActions';
 import RedditList from '../RedditList/RedditList';
 import styles from './RedditPage.scss';
 
-class RedditPage extends React.Component {
+export class RedditPage extends React.Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchPosts());
@@ -22,7 +22,6 @@ class RedditPage extends React.Component {
 }
 
 RedditPage.propTypes = {
-  dispatch: PropTypes.object.isRequired,
   redditData: PropTypes.array.isRequired,
 };
 
@@ -38,4 +37,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
+  null,
 )(RedditPage);

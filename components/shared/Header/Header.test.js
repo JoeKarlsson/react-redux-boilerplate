@@ -1,10 +1,14 @@
-import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import Header from './Header';
+ import React from 'react';
+import {
+  shallow,
+} from 'enzyme';
 import renderer from 'react-test-renderer';
-import { MemoryRouter, Link } from 'react-router-dom';
+import {
+  MemoryRouter,
+  Link,
+} from 'react-router-dom';
+import Header from './Header';
 
-//Snapshot tests
 test('Header is rendered', () => {
   const component = renderer.create(
     <MemoryRouter><Header /></MemoryRouter>
@@ -13,7 +17,6 @@ test('Header is rendered', () => {
   expect(tree).toMatchSnapshot();
 });
 
-// DOM Testing
 test('Header is rendered correctly', () => {
   const wrapper = shallow(<MemoryRouter><Header /></MemoryRouter>);
   expect(wrapper).toHaveLength(1);
@@ -21,7 +24,6 @@ test('Header is rendered correctly', () => {
 
 test('Header should render without throwing an error', () => {
   const wrapper = shallow(<Header />);
-
   expect(wrapper.contains(<div className="header"><h1>React Reddit</h1><ul role="nav"><li><Link to="/">Home</Link></li><li><Link to="/about">About</Link></li></ul></div>)).toEqual(true);
 });
 

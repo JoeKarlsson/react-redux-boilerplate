@@ -9,7 +9,10 @@
     "test-watch": "jest --watch"
   },
   "jest": {
-    "transform": "./jest-preprocessor.js"
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "keywords": [],
   "author": "Joe Karlson",
@@ -48,8 +51,10 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^21.0.2",
     "react-addons-test-utils": "^15.6.0",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "^15.6.1",
+    "redux-mock-store": "^1.3.0"
   }
 }

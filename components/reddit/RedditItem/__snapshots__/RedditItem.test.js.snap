@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RedditItem page snapshot matches 1`] = `
+<div
+  className="RedditItem"
+>
+  <h3>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum dolorem architecto eos, esse facere quo omnis expedita, impedit officiis! Quisquam officiis recusandae expedita numquam vel in molestias qui placeat esse.
+  </h3>
+  <p>
+    Author: 
+    Joe Karlsson
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    X
+  </button>
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RedditList page snapshot matches 1`] = `
+<div
+  className="RedditList"
+>
+  <h2>
+    Reddit List
+  </h2>
+</div>
+`;

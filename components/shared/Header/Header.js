@@ -15,7 +15,7 @@ class Header extends React.Component {
           <li><Link to="/about">About</Link></li>
         </ul>
       </div>
-    )
+    );
   }
 }
 

@@ -15,16 +15,16 @@ export const fetchPosts = () => {
       types: [
         FETCH_POSTS_REQUEST,
         FETCH_POSTS_SUCCESS,
-        FETCH_POSTS_FAILURE
+        FETCH_POSTS_FAILURE,
       ],
       data,
-    }
-  }
+    },
+  };
 };
 
 export const removeItem = (index) => {
   return {
     type: REMOVE_ITEM,
     index,
-  }
+  };
 };

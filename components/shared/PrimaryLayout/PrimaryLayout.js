@@ -3,14 +3,14 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import styles from './PrimaryLayout.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import About from '../../static/about/About';
 import NoMatch from '../../static/noMatch/NoMatch';
 import RedditPage from '../../reddit/RedditPage/RedditPage';
+import styles from './PrimaryLayout.scss';
 
-class PrimaryLayout extends React.Component {
+export class PrimaryLayout extends React.Component {
   render() {
     return (
       <div className={styles.PrimaryLayout}>
