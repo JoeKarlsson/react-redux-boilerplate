@@ -1,9 +1,5 @@
 import { CALL_API } from '../middleware/api';
-
-export const FETCH_POSTS_REQUEST = 'FETCH_POSTS_REQUEST';
-export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
-export const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE';
-export const REMOVE_ITEM = 'REMOVE_ITEM';
+import * as types from '../constants/actionTypes';
 
 export const fetchPosts = () => {
   const data = {
@@ -13,9 +9,9 @@ export const fetchPosts = () => {
     [CALL_API]: {
       endpoint: 'showerthoughts.json',
       types: [
-        FETCH_POSTS_REQUEST,
-        FETCH_POSTS_SUCCESS,
-        FETCH_POSTS_FAILURE,
+        types.FETCH_POSTS_REQUEST,
+        types.FETCH_POSTS_SUCCESS,
+        types.FETCH_POSTS_FAILURE,
       ],
       data,
     },
@@ -24,7 +20,7 @@ export const fetchPosts = () => {
 
 export const removeItem = (index) => {
   return {
-    type: REMOVE_ITEM,
+    type: types.REMOVE_ITEM,
     index,
   };
 };

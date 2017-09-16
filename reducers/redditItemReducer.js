@@ -1,32 +1,25 @@
-'use strict';
-
 import { List } from 'immutable';
-import {
-  FETCH_POSTS_REQUEST,
-  FETCH_POSTS_SUCCESS,
-  FETCH_POSTS_FAILURE,
-  REMOVE_ITEM,
-} from '../actions/redditActions';
+import * as types from '../constants/actionTypes';
 
 const initialState = List();
 
 const redditItemReducer = (state = initialState, action) => {
 
-  let newState = state;
+  const newState = state;
 
-  switch(action.type) {
+  switch (action.type) {
 
-    case FETCH_POSTS_REQUEST:
+    case types.FETCH_POSTS_REQUEST:
       return state;
 
-    case FETCH_POSTS_SUCCESS:
-      const parsedPosts = JSON.parse(action.response).data.children
+    case types.FETCH_POSTS_SUCCESS:
+      const parsedPosts = JSON.parse(action.response).data.children;
       return List(parsedPosts);
 
-    case FETCH_POSTS_FAILURE:
+    case types.FETCH_POSTS_FAILURE:
       return state;
 
-    case REMOVE_ITEM:
+    case types.REMOVE_ITEM:
       return state.delete(action.index);
 
     default:
