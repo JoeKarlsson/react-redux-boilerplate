@@ -11,6 +11,7 @@ module.exports = {
       "consistent-return": 0,
       "no-bitwise": 0,
       "no-shadow": 0,
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     },
     "env": {
       "browser": false,    // browser global variables.
