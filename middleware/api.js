@@ -12,14 +12,14 @@ function callApi(endpoint, data = {}) {
   return fetch(BASE_URL + endpoint)
     .then(response =>
       response.text()
-      .then(text => ({ text, response }))
+        .then(text => ({ text, response })),
     ).then(({ text, response }) => {
       if (!response.ok) {
         return Promise.reject(text);
       }
-      return text
+      return text;
     }).catch(err => console.log(err));
-};
+}
 
 export const CALL_API = Symbol('Call API');
 
