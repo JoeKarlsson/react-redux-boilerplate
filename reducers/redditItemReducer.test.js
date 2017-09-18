@@ -15,31 +15,19 @@ test('redditItem reducer should handle FETCH_POSTS_SUCCESS', () => {
       response: '{"data": { "children":[{"Post1":"Lorem"}]}}',
     }),
   ).toEqual(List([{ Post1: 'Lorem' }]));
+});
 
-  // expect(
-  //   reducer(
-  //     [
-  //       {
-  //         text: 'Use Redux',
-  //         completed: false,
-  //         id: 0
-  //       }
-  //     ],
-  //     {
-  //       type: types.ADD_TODO,
-  //       text: 'Run the tests'
-  //     }
-  //   )
-  // ).toEqual([
-  //   {
-  //     text: 'Run the tests',
-  //     completed: false,
-  //     id: 1
-  //   },
-  //   {
-  //     text: 'Use Redux',
-  //     completed: false,
-  //     id: 0
-  //   }
-  // ])
-})
+test('redditItem reducer should handle REMOVE_ITEM', () => {
+  const mockData = [{ Post1: 'Lorem' }, { Post2: 'Ipsum' }, { Post3: 'Dolors' }];
+  const expectedData = [{ Post1: 'Lorem' }, { Post3: 'Dolors' }];
+
+  const initialState = List(mockData);
+  const index = 1;
+
+  expect(
+    reducer(initialState, {
+      type: types.REMOVE_ITEM,
+      index,
+    }),
+  ).toEqual(List(expectedData));
+});
