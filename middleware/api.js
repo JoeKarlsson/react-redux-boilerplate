@@ -4,7 +4,7 @@
   no-undef: 0
 */
 
-function callApi(endpoint, data={}) {
+function callApi(endpoint, data = {}) {
 
   const BASE_URL = 'https://www.reddit.com/r/';
   const { method } = data;

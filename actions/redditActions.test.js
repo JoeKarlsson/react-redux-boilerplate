@@ -1,21 +1,46 @@
+// import configureMockStore from 'redux-mock-store';
+// import thunk from 'redux-thunk';
+// import nock from 'nock';
 import * as actions from './redditActions';
 import * as types from '../constants/actionTypes';
 
-describe('Reddit actions', () => {
-  it('should create an action to add a todo', () => {
-    const text = 'Finish docs';
-    const expectedAction = {
-      type: types.ADD_TODO,
-      text,
-    };
-    expect(actions.addTodo(text)).toEqual(expectedAction);
-  });
-});
+test('removeItem create an action to remove a post', () => {
+  const index = 0
+  const expectedAction = {
+    type: types.REMOVE_ITEM,
+    index,
+  };
+  expect(actions.removeItem(index)).toEqual(expectedAction);
+})
 
-test('Reddit actions should create an action to add reddit items', () => {
-  const component = renderer.create(
-    <RedditItem index={0} author='Joe Karlsson'/>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+// const middlewares = [thunk];
+// const mockStore = configureMockStore(middlewares);
+
+// test('async actions creates FETCH_POSTS_SUCCESS when fetching todos has been done', () => {
+//   afterEach(() => {
+//     nock.cleanAll();
+//   });
+//
+//   nock('https://www.reddit.com/')
+//     .get('/r/showerthoughts.json')
+//     .reply(200, { body: { todos: ['do something'] } });
+//
+//   const expectedActions = [
+//     { type: types.FETCH_POSTS_REQUEST },
+//     { type: types.FETCH_POSTS_SUCCESS,
+//       body: {
+//         todos: ['do something'],
+//       },
+//     },
+//   ];
+//
+//   console.log(actions);
+//   const store = mockStore({ todos: [] });
+//
+//   return store.dispatch(actions.fetchPosts())
+//     .then(() => {
+//       // return of async actions
+//       console.log(store.getActions())
+//       expect(store.getActions()).toEqual(expectedActions);
+//     });
+// });
