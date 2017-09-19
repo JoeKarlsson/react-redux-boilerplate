@@ -12,9 +12,10 @@ const redditItemReducer = (state = initialState, action) => {
     case types.FETCH_POSTS_REQUEST:
       return state;
 
-    case types.FETCH_POSTS_SUCCESS:
+    case types.FETCH_POSTS_SUCCESS: {
       const parsedPosts = JSON.parse(action.response).data.children;
       return List(parsedPosts);
+    }
 
     case types.FETCH_POSTS_FAILURE:
       return state;
@@ -23,9 +24,8 @@ const redditItemReducer = (state = initialState, action) => {
       return state.delete(action.index);
 
     default:
-      newState;
+      return newState;
   }
-  return newState;
 };
 
 export default redditItemReducer;
