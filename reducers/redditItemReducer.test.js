@@ -1,6 +1,6 @@
 import { List } from 'immutable';
-import reducer from './redditItemReducer'
-import * as types from '../constants/actionTypes'
+import reducer from './redditItemReducer';
+import * as types from '../constants/actionTypes';
 
 test('redditItem reducer should return the initial state', () => {
   const initialState = List();
