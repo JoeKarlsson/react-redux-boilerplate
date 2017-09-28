@@ -49,13 +49,13 @@ module.exports = {
       use: 'file-loader',
     }, {
       test: /\.(mp4|webm)$/,
-      use: 'url?limit=10000'
+      use: 'url?limit=10000',
     }, {
       test: /(\.scss$|\.css$)/,
       use: [
-        "style-loader",
-        "css-loader?modules&importLoaders=1" + "&localIdentName=[path][local]__[hash:base64:5]",
-        "sass-loader"
+        'style-loader',
+        'css-loader?modules&importLoaders=1&localIdentName=[path][local]__[hash:base64:5]',
+        'sass-loader',
       ]
     }],
   }

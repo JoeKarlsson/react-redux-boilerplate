@@ -1,3 +1,4 @@
+import nock from 'nock';
 import apiMiddleware, { CALL_API } from './api';
 import * as types from '../constants/actionTypes';
 
@@ -13,6 +14,10 @@ const create = () => {
   return { store, next, invoke };
 };
 
+afterEach(() => {
+  nock.cleanAll();
+});
+
 test('api redux middleware passes through non-function action', () => {
   const { next, invoke } = create();
   const action = { type: 'TEST' };
@@ -21,8 +26,13 @@ test('api redux middleware passes through non-function action', () => {
 });
 
 test('api redux middleware calls the function', () => {
+  nock('/reddit\.com/').log(console.log)
+    .get('/r/showerthoughts.json')
+    .reply(200, '{ "data": { "children": [{ Post1: "Lorem Ipsum" }] } }');
+
   const { invoke } = create();
-  const fn = jest.fn(CALL_API);
+  const fn = jest.fn();
+  // const fn = jest.fn(CALL_API);
   const action = {
     [CALL_API]: {
       endpoint: 'showerthoughts.json',
@@ -31,9 +41,8 @@ test('api redux middleware calls the function', () => {
         types.FETCH_POSTS_SUCCESS,
         types.FETCH_POSTS_FAILURE,
       ],
-    }
+    },
   };
-  // console.log(invoke(action));
   invoke(action);
   expect(fn).toHaveBeenCalled();
 });

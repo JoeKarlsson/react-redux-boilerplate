@@ -9,12 +9,14 @@ test('redditItem reducer should return the initial state', () => {
 
 test('redditItem reducer should handle FETCH_POSTS_SUCCESS', () => {
   const initialState = List();
+  const expectedData = List([{ Post1: 'Lorem' }]);
+
   expect(
     reducer(initialState, {
       type: types.FETCH_POSTS_SUCCESS,
       response: '{"data": { "children":[{"Post1":"Lorem"}]}}',
     }),
-  ).toEqual(List([{ Post1: 'Lorem' }]));
+  ).toEqual(expectedData);
 });
 
 test('redditItem reducer should handle REMOVE_ITEM', () => {
