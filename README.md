@@ -1,20 +1,34 @@
-## Intro to Redux and ImmutableJs
+![](http://jpsierens.com/wp-content/uploads/2016/06/react-eco-wp.gif)
 
-This section covers how to add Redux and ImmutableJs into your build so that you can have predicatable state containers to your application.
+# webpack-react-redux-boilerplate
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+A boilerplate for playing around with react, redux and react-router with the help of webpack.
 
-### What is Redux?
-Redux is a predictable state container for JavaScript apps.
+## Introduction
 
-It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
+The JavaScript ecosystem evolves at incredible speed: staying current can feel
+overwhelming. So, instead of you having to stay on top of every new tool,
+feature and technique to hit the headlines, this project aims to lighten the
+load by providing a curated baseline of the most valuable ones.
 
-### What is ImmutableJS?
-Immutable data cannot be changed once created, leading to much simpler application development, no defensive copying, and enabling advanced memoization and change detection techniques with simple logic. Persistent data presents a mutative API which does not update the data in-place, but instead always yields new updated data.
+Using React Boilerplate, you get to start your app with our community's current
+ideas on what represents optimal developer experience, best practice, most
+efficient tooling and cleanest project structure.
 
-Immutable.js provides many Persistent Immutable data structures including: List, Stack, Map, OrderedMap, Set, OrderedSet and Record.
+### Contains:
 
+* a working example of a filterable table which you can play around with (look below).
+* ES6 - 7 Support with Babel
+* Redux dev tools to help you keep track of the app's state
+* Routing
+* hot module replacement support so you can change modules or react components without having to reload the browser
+* a webpack production config so you can build the app and make it ready for production
+* Sass support, just import your styles wherever you need them
+* eslint to keep your js readable
+* much more...
 
 ### Getting Started
-* run `npm start`
+* run `npm install && npm start`
 
 ### Resources
 - [Redux Slides](https://slides.com/joecarlson/redux)

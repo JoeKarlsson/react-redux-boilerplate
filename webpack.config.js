@@ -1,7 +1,5 @@
-'use strict';
-
 const path = require('path');
-const autoprefixer = require('autoprefixer');
+// const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -9,7 +7,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.join(__dirname, '/entry.js'),
+    path.join(__dirname, '/src/entry.js'),
   ],
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -19,7 +17,7 @@ module.exports = {
   resolve: {},
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.tpl.html',
+      template: 'src/index.tpl.html',
       inject: 'body',
       filename: 'index.html',
     }),
@@ -39,11 +37,11 @@ module.exports = {
           options: {
             presets: [
               'react',
-              'es2015'
+              'es2015',
             ],
           },
-        }
-      ]
+        },
+      ],
     }, {
       test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
       use: 'file-loader',
@@ -56,7 +54,7 @@ module.exports = {
         'style-loader',
         'css-loader?modules&importLoaders=1&localIdentName=[path][local]__[hash:base64:5]',
         'sass-loader',
-      ]
+      ],
     }],
-  }
+  },
 };
