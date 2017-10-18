@@ -18,7 +18,7 @@
     "healthcheck": "npm run lint && npm run lint:css && npm run test:coverage",
     "stats": "webpack --json > webpack.stats.json",
     "commit": "commit-wizard",
-		"postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./server/webpack/webpack.config.js --progress --profile --colors"
+    "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.js --progress --profile --colors"
   },
   "jest": {
     "collectCoverageFrom": [
