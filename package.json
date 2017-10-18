@@ -28,7 +28,7 @@
       "text-summary",
       "text",
       "json",
-			"lcov"
+      "lcov"
     ],
     "coverageDirectory": "coverage",
     "moduleDirectories": [
