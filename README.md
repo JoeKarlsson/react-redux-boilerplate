@@ -1,8 +1,13 @@
 ![](http://jpsierens.com/wp-content/uploads/2016/06/react-eco-wp.gif)
 
+
 # webpack-react-redux-boilerplate
-[![Coverage Status](https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/react-boilerplate/react-boilerplate?branch=master)[![Build Status](https://travis-ci.org/JoeKarlsson/react-redux-boilerplate.svg?branch=master)](https://travis-ci.org/JoeKarlsson/react-redux-boilerplate)[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+
+[![Coverage Status](https://coveralls.io/repos/github/JoeKarlsson/react-redux-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/JoeKarlsson/react-redux-boilerplate?branch=master)[![Build Status](https://travis-ci.org/JoeKarlsson/react-redux-boilerplate.svg?branch=master)](https://travis-ci.org/JoeKarlsson/react-redux-boilerplate)[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+
+
 A boilerplate for playing around with react, redux and react-router with the help of webpack.
+
 
 ## Introduction
 
@@ -14,6 +19,7 @@ load by providing a curated baseline of the most valuable ones.
 Using React Boilerplate, you get to start your app with our community's current
 ideas on what represents optimal developer experience, best practice, most
 efficient tooling and cleanest project structure.
+
 
 ### Contains:
 
@@ -27,8 +33,10 @@ efficient tooling and cleanest project structure.
 * eslint to keep your js readable
 * much more...
 
+
 ### Getting Started
 * run `npm install && npm start`
+
 
 ### Resources
 - [Redux Slides](https://slides.com/joecarlson/redux)

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "test": "jest --coverage",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "test:watch": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
     "test:coverage": "jest --coverage",
@@ -27,9 +27,10 @@
       "html",
       "text-summary",
       "text",
-      "json"
+      "json",
+			"lcov"
     ],
-    "coverageDirectory": "testCoverage",
+    "coverageDirectory": "coverage",
     "moduleDirectories": [
       "node_modules"
     ],
