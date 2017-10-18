@@ -3,7 +3,7 @@ import styles from './NoMatch.scss';
 
 const NoMatch = () => {
 	return (
-		<div className={styles.noMatch}>
+		<div className={styles.NoMatch}>
       No Page Found
 		</div>
 	);
