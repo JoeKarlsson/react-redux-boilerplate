@@ -7,5 +7,5 @@ after_success: npm run coverage
 deploy:
   provider: heroku
   api_key:
-    secure: "YOUR ENCRYPTED API KEY"
+    secure: "5673ce98-2268-4eee-a92d-c682a3641f28"
     app: react-redux-boilerplate1

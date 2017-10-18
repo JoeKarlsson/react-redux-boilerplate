@@ -8,6 +8,8 @@
 
 A boilerplate for playing around with react, redux and react-router with the help of webpack.
 
+The (deployed boilerplate)[https://react-redux-boilerplate1.herokuapp.com/] can be found here.
+
 
 ## Introduction
 
