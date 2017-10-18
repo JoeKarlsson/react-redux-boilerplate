@@ -1,7 +1,7 @@
 ![](http://jpsierens.com/wp-content/uploads/2016/06/react-eco-wp.gif)
 
 # webpack-react-redux-boilerplate
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+[![Coverage Status](https://coveralls.io/repos/github/react-boilerplate/react-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/react-boilerplate/react-boilerplate?branch=master)[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 A boilerplate for playing around with react, redux and react-router with the help of webpack.
 
 ## Introduction
