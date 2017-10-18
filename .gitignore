@@ -12,7 +12,6 @@ webpack.stats.json
 .jshintrc
 yarn-error*.log
 .coveralls.yml
-.travis.yml
 
 # OS generated files #
 ######################
