@@ -11,7 +11,6 @@ webpack.stats.json
 .jshintignore
 .jshintrc
 yarn-error*.log
-.coveralls.yml
 
 # OS generated files #
 ######################
