@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+	"engines": {
+    "node": "8.7.0"
+  },
   "scripts": {
     "start": "node src/server.js",
     "test": "jest --coverage",
