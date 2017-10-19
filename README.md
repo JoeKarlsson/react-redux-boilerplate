@@ -8,7 +8,7 @@
 
 A boilerplate for playing around with react, redux and react-router with the help of webpack.
 
-The (deployed boilerplate)[https://react-redux-boilerplate1.herokuapp.com/] can be found here.
+The [deployed boilerplate](https://react-redux-boilerplate1.herokuapp.com/) can be found here.
 
 
 ## Introduction
@@ -37,7 +37,12 @@ efficient tooling and cleanest project structure.
 
 
 ### Getting Started
+
 * run `npm install && npm start`
+
+### Deployment
+
+* Add the project to Coveralls and travis-ci then link up the project to Heroku. Be sure to enable auto deployments through Travis when running this project. 
 
 
 ### Resources
