@@ -1,11 +1,10 @@
 language: node_js
 node_js:
-  - "8.7.0"
+- 8.7.0
 notifications:
   email: false
 after_success: npm run coverage
 deploy:
   provider: heroku
   api_key:
-    secure: "5673ce98-2268-4eee-a92d-c682a3641f28"
-    app: react-redux-boilerplate1
+    secure: onDbR0btpANYvt6U+9Bw8zEBYPJMMn8MDXIOt1e/NUBzHiUj5Cpbue+7BzTeJhLW8ifOfn+Wa9N5g3OK+hNO5lwLgSPIhdQOcu9OH4+2In3OAFXYal1vBJeqIiBqhWz0e8qzFqzfZ7YDSeP807eJ95uGNEN1xWP0OleMEctpMEEQtp0I+DU5rtqmlwb2kyPcDBmbvR6emL2RJp/v8DvNJCfz3XsZobULzpL5/OmgO078tmnXR5Ji+jYQNUuHYGXcz3YNY88xs1g1TlFF2HnZJzej2nOXagyuvx0AhPRzrpMHrFSlY98QadAcnC2l0YfWfW4JHIBH0q/i4hHEXeEzp7xeaRjbElEZgVwwO1DxAtmKeaoVCHH+IMQrPYyGnW5U+zESqS/Je7HLpTg41Oy1W656BHm6Uc0AqF8cjiN+dzvy6mmVzd8CTzMpwGdLtiaDHVW81YU5yeJn8TSW5actqWGXza1yGXRk8mFFJ3a7DFsAtkI9CKiYIY5zLqFZF6lxlrHQpxax1GZIhf25fV3o66K7hLEskD9CWC/OKcXS9SPBakVWEbce/iQLpbuyDHHLdlT2odVasUvb+W0Q0ufiKoyLVAmfa+CV5J/95i8dqUs6eVnVqpYn3D9QtT0+HNRhBDYg1O4hGWR+8m11mwtO9MeFojet0e/HwFvsWFk2RG4=
