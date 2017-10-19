@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './NoMatch.scss';
+import './NoMatch.scss';
 
 const NoMatch = () => {
 	return (
-		<div className={styles.NoMatch}>
+		<div className="NoMatch">
       No Page Found
 		</div>
 	);

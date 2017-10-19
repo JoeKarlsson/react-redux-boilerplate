@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RedditItem from '../RedditItem/RedditItem';
-import styles from './RedditList.scss';
+import './RedditList.scss';
 
 class RedditList extends React.Component {
 
@@ -22,7 +22,7 @@ class RedditList extends React.Component {
 		const redditListNode = this.props.redditData.map(RedditList.redditItemNodeBuilder);
 
 		return (
-			<div className={styles.RedditList}>
+			<div className="RedditList">
 				<h2>Reddit List</h2>
 				{ redditListNode }
 			</div>

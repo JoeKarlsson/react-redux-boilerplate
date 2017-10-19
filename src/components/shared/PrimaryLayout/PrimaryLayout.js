@@ -8,11 +8,11 @@ import Footer from '../Footer/Footer';
 import About from '../../static/about/About';
 import NoMatch from '../../static/noMatch/NoMatch';
 import RedditPage from '../../reddit/RedditPage/RedditPage';
-import styles from './PrimaryLayout.scss';
+import './PrimaryLayout.scss';
 
 export const PrimaryLayout = () => {
 	return (
-		<div className={styles.PrimaryLayout}>
+		<div className="PrimaryLayout">
 			<Header />
 			<div>
 				<Switch>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../../../actions/redditActions';
 import RedditList from '../RedditList/RedditList';
-import styles from './RedditPage.scss';
+import './RedditPage.scss';
 
 export class RedditPage extends React.Component {
 	componentDidMount() {
@@ -13,7 +13,7 @@ export class RedditPage extends React.Component {
 
 	render() {
 		return (
-			<div className={styles.RedditPage}>
+			<div className="RedditPage">
 				<h1>Reddit</h1>
 				<RedditList redditData={this.props.redditData} />
 			</div>

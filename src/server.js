@@ -4,7 +4,7 @@ const fs = require('fs');
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('../webpack.config.js');
+const config = require('../webpack.config.dev.js');
 
 const app = express();
 

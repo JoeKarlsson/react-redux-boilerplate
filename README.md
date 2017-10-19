@@ -3,7 +3,7 @@
 
 # webpack-react-redux-boilerplate
 
-[![Coverage Status](https://coveralls.io/repos/github/JoeKarlsson/react-redux-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/JoeKarlsson/react-redux-boilerplate?branch=master)[![Build Status](https://travis-ci.org/JoeKarlsson/react-redux-boilerplate.svg?branch=master)](https://travis-ci.org/JoeKarlsson/react-redux-boilerplate)[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+[![Coverage Status](https://coveralls.io/repos/github/JoeKarlsson/react-redux-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/JoeKarlsson/react-redux-boilerplate?branch=master)     [![Build Status](https://travis-ci.org/JoeKarlsson/react-redux-boilerplate.svg?branch=master)](https://travis-ci.org/JoeKarlsson/react-redux-boilerplate)     [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
 
 A boilerplate for playing around with react, redux and react-router with the help of webpack.

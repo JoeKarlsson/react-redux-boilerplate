@@ -1,30 +1,54 @@
+const webpack = require('webpack');
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
-	devtool: 'eval-source-map',
 	entry: [
-		'webpack-hot-middleware/client?reload=true',
 		path.join(__dirname, '/src/entry.js'),
 	],
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		filename: '[name].js',
+		filename: '[name]-[hash].min.js',
 		publicPath: '/',
 	},
 	resolve: {},
 	plugins: [
+		new ExtractTextPlugin({
+			filename: '[name]-[hash].css',
+			allChunks: true,
+		}),
 		new HtmlWebpackPlugin({
 			template: 'src/index.tpl.html',
 			inject: 'body',
 			filename: 'index.html',
 		}),
-		new webpack.HotModuleReplacementPlugin(),
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false,
+				screw_ie8: false,
+				conditionals: true,
+				unused: true,
+				comparisons: true,
+				sequences: true,
+				dead_code: true,
+				evaluate: true,
+				if_return: true,
+				join_vars: true,
+			},
+			output: {
+				comments: false,
+			},
+		}),
 		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('development'),
+		}),
+		new StatsPlugin('webpack.stats.json', {
+			source: false,
+			modules: false,
 		}),
 		new StyleLintPlugin(),
 	],
@@ -51,11 +75,15 @@ module.exports = {
 			use: 'url?limit=10000',
 		}, {
 			test: /(\.scss$|\.css$)/,
-			use: [
-				'style-loader',
-				'css-loader?modules&importLoaders=1&localIdentName=[path][local]__[hash:base64:5]',
-				'sass-loader',
-			],
+			// use: [
+			// 	'style-loader',
+			// 	'css-loader?modules&importLoaders=1&localIdentName=[path][local]__[hash:base64:5]',
+			// 	'sass-loader',
+			// ],
+			use: ExtractTextPlugin.extract({
+				fallback: 'style-loader',
+				use: ['css-loader', 'sass-loader'],
+			}),
 		}],
 	},
 };
