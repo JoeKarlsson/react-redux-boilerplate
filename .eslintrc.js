@@ -21,8 +21,8 @@ module.exports = {
 				"react/jsx-indent-props": [2, 'tab'],
     },
     "env": {
-      "browser": true,    // browser global variables.
-      "node": true,        // Node.js global variables and Node.js-specific rules.
+      "browser": true,
+      "node": true,
       "jest": true,
     },
     "plugins": [
