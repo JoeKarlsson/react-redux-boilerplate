@@ -126,7 +126,9 @@
     "whatwg-fetch": "^2.0.3",
     "xmlhttprequest": "^1.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "supertest": "^3.0.0"
+  },
   "release": {
     "analyzeCommits": "simple-commit-message"
   },

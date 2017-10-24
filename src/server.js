@@ -56,3 +56,9 @@ const onStart = (err) => {
 };
 
 app.listen(port, onStart);
+
+if (!module.parent) {
+	app.listen(port, '0.0.0.0', onStart);
+}
+
+module.exports = app;
