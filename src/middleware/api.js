@@ -4,8 +4,6 @@
   no-undef: 0
 */
 
-import fetch from 'isomorphic-fetch';
-
 function callApi(endpoint, data = {}) {
 
 	const BASE_URL = 'https://www.reddit.com/r/';
@@ -13,16 +11,18 @@ function callApi(endpoint, data = {}) {
 
 	return fetch(BASE_URL + endpoint)
 		.then(response =>
-			response.text()
-				.then(text => ({ text, response })),
+			response.json()
+				.then(json => ({ json, response })),
 		)
-		.then(({ text, response }) => {
+		.then(({ json, response }) => {
 			if (!response.ok) {
 				return Promise.reject(text);
 			}
-			return text;
+			return json;
 		})
-		.catch(err => console.log(err));
+		.catch((err) => {
+			throw new Error(err);
+		});
 }
 
 export const CALL_API = Symbol('Call API');
@@ -37,16 +37,19 @@ export default store => next => (action) => {
 	const { endpoint, types, data } = callAPI;
 	const [requestType, successType, errorType] = types;
 
-	return callApi(endpoint, data).then(
-		response =>
-			next({
-				response,
-				type: successType,
-				data,
+	return callApi(endpoint, data)
+		.then(
+			response =>
+				next({
+					response,
+					type: successType,
+					data,
+				}),
+		)
+		.catch(
+			error => next({
+				error: error.message || 'There was an error.',
+				type: errorType,
 			}),
-		error => next({
-			error: error.message || 'There was an error.',
-			type: errorType,
-		}),
-	);
+		);
 };
