@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
-import api from '../middleware/api';
+import api, { CALL_API } from '../middleware/api';
 import * as actions from './redditActions';
 import * as types from '../constants/actionTypes';
 
@@ -15,6 +15,26 @@ describe('Reddit Actions', () => {
 	});
 
 	describe('fetchPosts', () => {
+		it('should return thunk object', () => {
+			const data = {
+				method: 'GET',
+			};
+
+			const expectedAction = {
+				[CALL_API]: {
+					endpoint: 'showerthoughts.json',
+					types: [
+						types.FETCH_POSTS_REQUEST,
+						types.FETCH_POSTS_SUCCESS,
+						types.FETCH_POSTS_FAILURE,
+					],
+					data,
+				},
+			};
+
+			expect(actions.fetchPosts()).toMatchObject(expectedAction);
+		});
+
 		describe('async actions', () => {
 
 			it('creates FETCH_POSTS_SUCCESS when fetching posts has been done', () => {
