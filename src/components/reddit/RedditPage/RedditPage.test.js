@@ -1,25 +1,59 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import {
 	shallow,
 } from 'enzyme';
 import { RedditPage } from './RedditPage';
 
-test('RedditPage is rendered correctly', () => {
-	const wrapper = shallow(<RedditPage />);
-	expect(wrapper).toHaveLength(1);
-});
+describe('RedditPage', () => {
 
-test('RedditPage should be selectable by the class `RedditPage`', () => {
-	const wrapper = shallow(<RedditPage />);
-	expect(wrapper.is('.RedditPage')).toBe(true);
-});
+	describe('rendering', () => {
+		let wrapper;
+		let inst;
 
-test('RedditPage should mount in the full DOM', () => {
-	const wrapper = shallow(<RedditPage />);
-	expect(wrapper.find('.RedditPage').length).toBe(1);
-});
+		beforeEach(() => {
+			wrapper = shallow(
+				<RedditPage dispatch={jest.fn()} />,
+			);
+			inst = wrapper.instance();
+		});
 
-test('RedditPage should render to static HTML', () => {
-	const wrapper = shallow(<RedditPage />);
-	expect(wrapper.text()).toContain('Reddit');
+		describe('initial state', () => {
+			it('should match the snapshot', () => {
+				const component = renderer.create(
+					<RedditPage dispatch={jest.fn()} />,
+				);
+				const tree = component.toJSON();
+				expect(tree).toMatchSnapshot();
+			});
+
+			it('is rendered correctly', () => {
+				expect(wrapper).toHaveLength(1);
+			});
+
+			it('should be selectable by the class `RedditPage`', () => {
+				expect(wrapper.is('.RedditPage')).toBe(true);
+			});
+
+			it('should mount in the full DOM', () => {
+				expect(wrapper.find('.RedditPage').length).toBe(1);
+			});
+
+			it('should render to static HTML', () => {
+				expect(wrapper.text()).toContain('Reddit');
+			});
+
+			it('should have correct inital state', () => {
+				const initialState = inst.state;
+				const expectedIntialState = null;
+				expect(initialState).toBe(expectedIntialState);
+			});
+
+			it('should not have any inital props', () => {
+				const initialProps = inst.props;
+				const expectedProps = {};
+				expect(initialProps).toMatchObject(expectedProps);
+			});
+		});
+	});
 });

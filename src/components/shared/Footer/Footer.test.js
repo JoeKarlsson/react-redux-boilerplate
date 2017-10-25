@@ -3,38 +3,62 @@ import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import Footer from './Footer';
 
-// Snapshot tests
-test('Footer is rendered', () => {
-	const component = renderer.create(
-		<footer />,
-	);
-	const tree = component.toJSON();
-	expect(tree).toMatchSnapshot();
-});
+describe('Footer', () => {
+	let wrapper;
+	let inst;
 
-// DOM Testing
-test('Footer is rendered correctly', () => {
-	const wrapper = shallow( <Footer /> );
-	expect(wrapper).toHaveLength(1);
-});
+	beforeEach(() => {
+		wrapper = shallow(
+			<Footer />,
+		);
+		inst = wrapper.instance();
+	});
 
-test('Footer should render without throwing an error', () => {
-	const wrapper = shallow( <Footer /> );
-	expect(wrapper.contains(<div className="footer"><h2>Footer</h2></div>)).toEqual(true);
-});
+	describe('rendering', () => {
+		describe('initial state', () => {
+			it('is rendered', () => {
+				const component = renderer.create(
+					<footer />,
+				);
+				const tree = component.toJSON();
+				expect(tree).toMatchSnapshot();
+			});
 
-test('Footer should be selectable by the class `footer`', () => {
-	const wrapper = shallow( <Footer /> );
-	expect(wrapper.is('.footer')).toBe(true);
-});
+			it('is rendered correctly', () => {
+				expect(wrapper).toHaveLength(1);
+			});
 
+			it('should render without throwing an error', () => {
+				expect(wrapper.contains(
+					<div className="footer">
+						<h2>Footer</h2>
+					</div>,
+				)).toEqual(true);
+			});
 
-test('Footer should mount in the full DOM', () => {
-	const wrapper = shallow( <Footer /> );
-	expect(wrapper.find('.footer').length).toBe(1);
-});
+			it('should be selectable by the class `footer`', () => {
+				expect(wrapper.is('.footer')).toBe(true);
+			});
 
-test('Footer should render to static HTML', () => {
-	const wrapper = shallow( <Footer /> );
-	expect(wrapper.text()).toEqual('Footer');
+			it('should mount in the full DOM', () => {
+				expect(wrapper.find('.footer').length).toBe(1);
+			});
+
+			it('should render to static HTML', () => {
+				expect(wrapper.text()).toEqual('Footer');
+			});
+
+			it('should have correct inital state', () => {
+				const initialState = inst.state;
+				const expectedIntialState = null;
+				expect(initialState).toBe(expectedIntialState);
+			});
+
+			it('should not have any inital props', () => {
+				const initialProps = inst.props;
+				const expectedProps = {};
+				expect(initialProps).toMatchObject(expectedProps);
+			});
+		});
+	});
 });

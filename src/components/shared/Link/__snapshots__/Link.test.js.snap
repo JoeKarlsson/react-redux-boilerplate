@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link changes the class when hovered 1`] = `
+exports[`Footer rendering Mouse Over should change the class when hovered 1`] = `
 <a
   className="normal"
   href="http://www.instagram.com"
@@ -11,7 +11,7 @@ exports[`Link changes the class when hovered 1`] = `
 </a>
 `;
 
-exports[`Link changes the class when hovered 2`] = `
+exports[`Footer rendering Mouse Over should change the class when hovered 2`] = `
 <a
   className="hovered"
   href="http://www.instagram.com"
@@ -22,7 +22,18 @@ exports[`Link changes the class when hovered 2`] = `
 </a>
 `;
 
-exports[`Link changes the class when hovered 3`] = `
+exports[`Footer rendering Mouse Over should change the class when hovered 3`] = `
+<a
+  className="normal"
+  href="http://www.instagram.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Instagram
+</a>
+`;
+
+exports[`Footer rendering initial state is rendered 1`] = `
 <a
   className="normal"
   href="http://www.instagram.com"
