@@ -62,7 +62,7 @@ describe('PrimaryLayout Page', () => {
 
 				fetchMock
 					.getOnce('https://www.reddit.com/r/showerthoughts.json', {
-						body: { ...testApiResponse },
+						body: testApiResponse,
 						headers: { 'content-type': 'application/json' },
 					});
 

@@ -61,14 +61,14 @@ describe('Reddit Actions', () => {
 
 				fetchMock
 					.getOnce('https://www.reddit.com/r/showerthoughts.json', {
-						body: { ...testApiResponse },
+						body: testApiResponse,
 						headers: { 'content-type': 'application/json' },
 					});
 
 				const expectedActions = [
 					{
 						data: { method: 'GET' },
-						response: { ...testApiResponse },
+						response: testApiResponse,
 						type: types.FETCH_POSTS_SUCCESS,
 					},
 				];
