@@ -13,7 +13,7 @@ const redditItemReducer = (state = initialState, action) => {
 		return state;
 
 	case types.FETCH_POSTS_SUCCESS: {
-		const parsedPosts = JSON.parse(action.response).data.children;
+		const parsedPosts = action.response.data.children;
 		return List(parsedPosts);
 	}
 

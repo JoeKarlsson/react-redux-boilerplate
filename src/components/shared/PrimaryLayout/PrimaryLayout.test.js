@@ -1,5 +1,7 @@
 import React from 'react';
-// import renderer from 'react-test-renderer';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import { PrimaryLayout } from './PrimaryLayout';
@@ -35,13 +37,25 @@ describe('PrimaryLayout Page', () => {
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('should match the snapshot', () => {
-				// const component = renderer.create(
-				// 	<MemoryRouter>
-				// 		<PrimaryLayout />
-				// 	</MemoryRouter>,
-				// );
-				// const tree = component.toJSON();
-				// expect(tree).toMatchSnapshot();
+				const middlewares = [];
+				const mockStore = configureMockStore(middlewares);
+
+				const initialState = {
+					redditItemReducer: {
+						toJS: jest.fn(),
+					},
+				};
+				const store = mockStore(initialState);
+
+				const component = renderer.create(
+					<Provider store={store}>
+						<MemoryRouter>
+							<PrimaryLayout />
+						</MemoryRouter>
+					</Provider>,
+				);
+				const tree = component.toJSON();
+				expect(tree).toMatchSnapshot();
 			});
 
 			it('is rendered correctly', () => {
