@@ -6,6 +6,7 @@
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
 [![Build Status][tests]][tests-url]
+[![Maintainability][maintainability]][maintainability-url]
 [![stars][stars]][stars-url]
 [![pr][pr]][pr-url]
 [![license][license]][license-url]
@@ -79,6 +80,9 @@ Don't hesitate to create a pull request. Every contribution is appreciated. In d
 
 [tests]: https://travis-ci.org/JoeKarlsson/react-redux-boilerplate.svg?branch=master
 [tests-url]: https://travis-ci.org/JoeKarlsson/react-redux-boilerplate
+
+[maintainability]: https://api.codeclimate.com/v1/badges/7d2a095c01bb88557a41/maintainability
+[maintainability-url]: https://codeclimate.com/github/JoeKarlsson/react-redux-boilerplate/maintainability
 
 [pr]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
 [pr-url]: CONTRIBUTING.md
