@@ -1,12 +1,13 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
 import renderer from 'react-test-renderer';
 import {
 	shallow,
 } from 'enzyme';
-import { RedditPage } from './RedditPage';
+import ConnectedRedditPage, { RedditPage } from './RedditPage';
 
 describe('RedditPage', () => {
-
 	describe('rendering', () => {
 		let wrapper;
 		let inst;
@@ -54,6 +55,25 @@ describe('RedditPage', () => {
 				const expectedProps = {};
 				expect(initialProps).toMatchObject(expectedProps);
 			});
+		});
+	});
+
+	describe('Connected Component', () => {
+		it('should render a connected component', () => {
+			const middlewares = [];
+			const mockStore = configureMockStore(middlewares);
+			const initialState = { redditItemReducer: 'REDDIT_DATA' };
+			const store = mockStore(initialState);
+
+			const connectedWrapper = shallow(
+				<Provider store={store}>
+					<ConnectedRedditPage />
+				</Provider>,
+			);
+			const connectedInst = connectedWrapper.instance();
+			expect(connectedWrapper.find(ConnectedRedditPage).length).toEqual(1);
+			const reduxStore = connectedInst.props.store.getState();
+			expect(reduxStore.redditItemReducer).toBe('REDDIT_DATA');
 		});
 	});
 });

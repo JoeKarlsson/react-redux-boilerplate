@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RedditList page snapshot matches 1`] = `
+exports[`Reddit List rendering initial state should match the snapshot 1`] = `
 <div
   className="RedditList"
 >

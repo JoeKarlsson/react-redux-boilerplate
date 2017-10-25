@@ -33,14 +33,14 @@ export class RedditItem extends React.Component {
 RedditItem.propTypes = {
 	author: PropTypes.string.isRequired,
 	index: PropTypes.number.isRequired,
-	dispatch: PropTypes.func.isRequired,
 	children: PropTypes.string,
+	dispatch: PropTypes.func.isRequired,
 };
 
 RedditItem.defaultProps = {
-	redditData: [],
 	author: 'Default',
-	children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum dolorem architecto eos, esse facere quo omnis expedita, impedit officiis! Quisquam officiis recusandae expedita numquam vel in molestias qui placeat esse.',
+	index: Date.now(),
+	children: '',
 };
 
 export default connect(null, null)(RedditItem);
