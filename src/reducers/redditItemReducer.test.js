@@ -14,7 +14,11 @@ test('redditItem reducer should handle FETCH_POSTS_SUCCESS', () => {
 	expect(
 		reducer(initialState, {
 			type: types.FETCH_POSTS_SUCCESS,
-			response: '{"data": { "children":[{"Post1":"Lorem"}]}}',
+			response: {
+				data: {
+					children: [{ Post1: 'Lorem' }],
+				},
+			},
 		}),
 	).toEqual(expectedData);
 });

@@ -1,25 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import { shallow } from 'enzyme';
+import fetchMock from 'fetch-mock';
 import { PrimaryLayout } from './PrimaryLayout';
-
-// const setup = () => {
-// 	const props = {};
-//
-// 	const enzymeWrapper = mount(
-// 		<MemoryRouter>
-// 			<PrimaryLayout {...props} />
-// 		</MemoryRouter>,
-// 	);
-//
-// 	return {
-// 		props,
-// 		enzymeWrapper,
-// 	};
-// };
+import api from '../../../middleware/api';
 
 describe('PrimaryLayout Page', () => {
 	let wrapper;
@@ -34,10 +22,15 @@ describe('PrimaryLayout Page', () => {
 		inst = wrapper.instance();
 	});
 
+	afterEach(() => {
+		fetchMock.reset();
+		fetchMock.restore();
+	});
+
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('should match the snapshot', () => {
-				const middlewares = [];
+				const middlewares = [thunk, api];
 				const mockStore = configureMockStore(middlewares);
 
 				const initialState = {
@@ -46,6 +39,32 @@ describe('PrimaryLayout Page', () => {
 					},
 				};
 				const store = mockStore(initialState);
+
+				const testApiResponse = {
+					data: {
+						children: [
+							{
+								data: {
+									title: 'Humans are such apex predators that we think getting scared like prey is fun and entertaining.',
+									id: '78dsfs',
+									author: 'old_and_spicy',
+								},
+							}, {
+								data: {
+									title: 'The milky way galaxy could be the only galaxy with milkyway bars in it"',
+									id: '78ezi9',
+									author: 'TheGodOfDucks',
+								},
+							},
+						],
+					},
+				};
+
+				fetchMock
+					.getOnce('https://www.reddit.com/r/showerthoughts.json', {
+						body: { ...testApiResponse },
+						headers: { 'content-type': 'application/json' },
+					});
 
 				const component = renderer.create(
 					<Provider store={store}>
