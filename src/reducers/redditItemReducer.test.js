@@ -10,34 +10,54 @@ describe('Reddit Item Reducer', () => {
 		});
 	});
 
-	it('should handle FETCH_POSTS_SUCCESS', () => {
-		const initialState = List();
-		const expectedData = List([{ Post1: 'Lorem' }]);
-
+	describe('FETCH_POSTS_REQUEST', () => {
 		expect(
-			reducer(initialState, {
-				type: types.FETCH_POSTS_SUCCESS,
-				response: {
-					data: {
-						children: [{ Post1: 'Lorem' }],
-					},
-				},
+			reducer([], {
+				type: types.FETCH_POSTS_REQUEST,
 			}),
-		).toEqual(expectedData);
+		).toEqual([]);
 	});
 
-	it('should handle REMOVE_ITEM', () => {
-		const mockData = [{ Post1: 'Lorem' }, { Post2: 'Ipsum' }, { Post3: 'Dolors' }];
-		const expectedData = [{ Post1: 'Lorem' }, { Post3: 'Dolors' }];
+	describe('FETCH_POSTS_SUCCESS', () => {
+		it('should handle FETCH_POSTS_SUCCESS', () => {
+			const initialState = List();
+			const expectedData = List([{ Post1: 'Lorem' }]);
 
-		const initialState = List(mockData);
-		const index = 1;
+			expect(
+				reducer(initialState, {
+					type: types.FETCH_POSTS_SUCCESS,
+					response: {
+						data: {
+							children: [{ Post1: 'Lorem' }],
+						},
+					},
+				}),
+			).toEqual(expectedData);
+		});
+	});
 
+	describe('FETCH_POSTS_FAILURE', () => {
 		expect(
-			reducer(initialState, {
-				type: types.REMOVE_ITEM,
-				index,
+			reducer([], {
+				type: types.FETCH_POSTS_FAILURE,
 			}),
-		).toEqual(List(expectedData));
+		).toEqual([]);
+	});
+
+	describe('REMOVE_ITEM', () => {
+		it('should handle REMOVE_ITEM', () => {
+			const mockData = [{ Post1: 'Lorem' }, { Post2: 'Ipsum' }, { Post3: 'Dolors' }];
+			const expectedData = [{ Post1: 'Lorem' }, { Post3: 'Dolors' }];
+
+			const initialState = List(mockData);
+			const index = 1;
+
+			expect(
+				reducer(initialState, {
+					type: types.REMOVE_ITEM,
+					index,
+				}),
+			).toEqual(List(expectedData));
+		});
 	});
 });
