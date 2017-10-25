@@ -1,11 +1,12 @@
 ![](http://jpsierens.com/wp-content/uploads/2016/06/react-eco-wp.gif)
 
 
-# webpack-react-redux-boilerplate
+# Webpack React Redux Boilerplate
 
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
 [![Build Status][tests]][tests-url]
+[![stars][stars]][stars-url]
 [![pr][pr]][pr-url]
 [![license][license]][license-url]
 [![twitter][twitter]][twitter-url]
@@ -84,6 +85,9 @@ Don't hesitate to create a pull request. Every contribution is appreciated. In d
 
 [cover]: https://coveralls.io/repos/github/JoeKarlsson/react-redux-boilerplate/badge.svg?branch=master
 [cover-url]: https://coveralls.io/github/JoeKarlsson/react-redux-boilerplate?branch=master
+
+[stars]: https://img.shields.io/github/stars/JoeKarlsson/react-redux-boilerplate.svg?style=flat-square
+[stars-url]: https://github.com/JoeKarlsson/react-redux-boilerplate/stargazers
 
 [license]: https://img.shields.io/github/license/JoeKarlsson/react-redux-boilerplate.svg
 [license-url]: https://github.com/JoeKarlsson/react-redux-boilerplate/blob/master/LICENSE
