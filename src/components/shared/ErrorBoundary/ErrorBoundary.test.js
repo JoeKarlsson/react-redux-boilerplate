@@ -61,9 +61,31 @@ describe('Error Boundary', () => {
 	});
 
 	describe('callbacks', () => {
+
+		class BuggyComponent extends React.Component {
+			componentDidMount() {
+				throw new Error('I crashed!');
+			}
+			render() {
+				return <h1>Buggy Component</h1>;
+			}
+		}
+
 		it('should only render error message when `hasError` is true', () => {
-			inst.state.hasError = true;
+
+			wrapper = shallow(
+				<ErrorBoundary>
+					<BuggyComponent />
+				</ErrorBoundary>,
+			);
+
+			wrapper
+				.instance()
+				.componentDidCatch({ toString: () => 'error' }, { componentStack: { toString: () => 'info' } });
+
 			wrapper.update();
+			expect(wrapper.text()).toBe('Something went wrong.error');
 		});
+
 	});
 });

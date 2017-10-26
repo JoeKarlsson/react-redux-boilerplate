@@ -1,4 +1,3 @@
-import nock from 'nock';
 import apiMiddleware from './api';
 
 describe('API middleware', () => {
@@ -12,10 +11,6 @@ describe('API middleware', () => {
 
 		return { store, next, invoke };
 	};
-
-	afterEach(() => {
-		nock.cleanAll();
-	});
 
 	it('should pass through non-function action', () => {
 		const { next, invoke } = create();

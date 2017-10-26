@@ -6,13 +6,18 @@ class ErrorBoundary extends React.Component {
 		super(props);
 		this.state = {
 			hasError: false,
+			error: null,
+			errorInfo: null,
 		};
 	}
 
 	componentDidCatch(error, info) {
+		console.log('error');
 		// Display fallback UI
 		this.setState({
 			hasError: true,
+			error,
+			errorInfo: info,
 		});
 		// You can also log the error to an error reporting service
 		console.error(error, info);
@@ -23,7 +28,12 @@ class ErrorBoundary extends React.Component {
 			// You can render any custom fallback UI
 			return (
 				<div className="Error">
-					<h1>Something went wrong.</h1>;
+					<h1>Something went wrong.</h1>
+					<details style={{ whiteSpace: 'pre-wrap' }}>
+						{this.state.error && this.state.error.toString()}
+						<br />
+						{this.state.errorInfo.componentStack}
+					</details>
 				</div>
 			);
 		}
