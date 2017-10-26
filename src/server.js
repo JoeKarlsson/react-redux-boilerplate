@@ -10,9 +10,10 @@ const app = express();
 
 // Check to see what dev environment we are in
 const isDeveloping = process.env.NODE_ENV !== 'production';
+const isTest = process.env.NODE_ENV === 'test';
 const port = isDeveloping ? 3000 : process.env.PORT;
 
-if (isDeveloping) {
+if (isDeveloping && !isTest) {
 	app.set('host', 'http://localhost');
 	const compiler = webpack(config);
 	const middleware = webpackMiddleware(compiler, {
@@ -27,6 +28,7 @@ if (isDeveloping) {
 			modules: false,
 		},
 	});
+
 	const response = (req, res) => {
 		res.write(middleware.fileSystem.readFileSync(path.resolve(__dirname, 'dist/index.html')));
 		res.end();
@@ -55,6 +57,8 @@ const onStart = (err) => {
 	);
 };
 
-app.listen(port, onStart);
+if (!module.parent) {
+	app.listen(port, onStart);
+}
 
 module.exports = app;
