@@ -4,7 +4,7 @@ import {
 	combineReducers,
 } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import * as reducers from './reducers';
 import api from './middleware/api';
 
