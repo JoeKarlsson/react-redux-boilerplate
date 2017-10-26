@@ -7,7 +7,7 @@
     "node": "8.7.0"
   },
   "scripts": {
-    "start": "node src/server.js",
+    "start": "cross-env NODE_ENV=development node src/server.js",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "coverage": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "test:watch": "cross-env NODE_ENV=test jest --watch --silent",
@@ -106,7 +106,7 @@
     "pre-git": "3.15.x",
     "prop-types": "15.6.x",
     "react": "16.0.x",
-    "react-addons-test-utils": "15.6.0x",
+    "react-addons-test-utils": "15.6.x",
     "react-dom": "16.0.x",
     "react-redux": "5.0.x",
     "react-router": "4.2.x",
