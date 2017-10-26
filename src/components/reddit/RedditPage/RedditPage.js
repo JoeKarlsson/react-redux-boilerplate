@@ -23,7 +23,7 @@ export class RedditPage extends React.Component {
 
 RedditPage.propTypes = {
 	dispatch: PropTypes.func.isRequired,
-	redditData: PropTypes.arrayOf(PropTypes.object).isRequired,
+	redditData: PropTypes.arrayOf(PropTypes.object),
 };
 
 RedditPage.defaultProps = {

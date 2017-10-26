@@ -1,31 +1,98 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import {
+	shallow,
+	configure,
+} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import { MemoryRouter } from 'react-router-dom';
+import fetchMock from 'fetch-mock';
 import RedditList from './RedditList';
+import api from '../../../middleware/api';
+
+configure({ adapter: new Adapter() });
 
 describe('Reddit List', () => {
 	describe('rendering', () => {
+		const redditData = [
+			{
+				data: {
+					title: 'Humans are such apex predators that we think getting scared like prey is fun and entertaining.',
+					id: '78dsfs',
+					author: 'old_and_spicy',
+				},
+			}, {
+				data: {
+					title: 'The milky way galaxy could be the only galaxy with milkyway bars in it"',
+					id: '78ezi9',
+					author: 'TheGodOfDucks',
+				},
+			},
+		];
 		let wrapper;
 		let inst;
 
 		beforeEach(() => {
 			wrapper = shallow(
 				<MemoryRouter>
-					<RedditList />
+					<RedditList redditData={redditData} />
 				</MemoryRouter>,
 			);
 			inst = wrapper.instance();
 		});
 
+		afterEach(() => {
+			fetchMock.reset();
+			fetchMock.restore();
+		});
+
 		describe('initial state', () => {
 			it('should match the snapshot', () => {
+				const middlewares = [thunk, api];
+				const mockStore = configureMockStore(middlewares);
+
+				const initialState = {
+					redditItemReducer: {
+						toJS: jest.fn(),
+					},
+				};
+				const store = mockStore(initialState);
+
+				const testApiResponse = {
+					data: {
+						children: [
+							{
+								data: {
+									title: 'Humans are such apex predators that we think getting scared like prey is fun and entertaining.',
+									id: '78dsfs',
+									author: 'old_and_spicy',
+								},
+							}, {
+								data: {
+									title: 'The milky way galaxy could be the only galaxy with milkyway bars in it"',
+									id: '78ezi9',
+									author: 'TheGodOfDucks',
+								},
+							},
+						],
+					},
+				};
+
+				fetchMock
+					.getOnce('https://www.reddit.com/r/showerthoughts.json', {
+						body: testApiResponse,
+						headers: { 'content-type': 'application/json' },
+					});
+
 				const component = renderer.create(
-					<MemoryRouter>
-						<RedditList />
-					</MemoryRouter>,
+					<Provider store={store}>
+						<MemoryRouter>
+							<RedditList redditData={redditData} />
+						</MemoryRouter>
+					</Provider>,
 				);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
@@ -49,8 +116,8 @@ describe('Reddit List', () => {
 
 			it('should have correct inital state', () => {
 				const initialState = inst.state;
-				const expectedIntialState = null;
-				expect(initialState).toBe(expectedIntialState);
+				const expectedIntialState = {};
+				expect(initialState).toMatchObject(expectedIntialState);
 			});
 
 			it('should not have any inital props', () => {

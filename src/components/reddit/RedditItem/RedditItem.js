@@ -38,8 +38,6 @@ RedditItem.propTypes = {
 };
 
 RedditItem.defaultProps = {
-	author: 'Default',
-	index: Date.now(),
 	children: '',
 };
 

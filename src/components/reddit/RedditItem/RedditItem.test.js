@@ -1,9 +1,13 @@
 import React from 'react';
 import {
 	shallow,
+	configure,
 } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import { RedditItem } from './RedditItem';
+
+configure({ adapter: new Adapter() });
 
 describe('Reddit Item', () => {
 	const mockFunction = jest.fn();
@@ -55,8 +59,8 @@ describe('Reddit Item', () => {
 
 			it('should have correct inital state', () => {
 				const initialState = inst.state;
-				const expectedIntialState = null;
-				expect(initialState).toBe(expectedIntialState);
+				const expectedIntialState = {};
+				expect(initialState).toMatchObject(expectedIntialState);
 			});
 
 			it('should not have any inital props', () => {

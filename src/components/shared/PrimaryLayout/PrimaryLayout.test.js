@@ -4,10 +4,16 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
-import { shallow } from 'enzyme';
+import {
+	shallow,
+	configure,
+} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import fetchMock from 'fetch-mock';
 import { PrimaryLayout } from './PrimaryLayout';
 import api from '../../../middleware/api';
+
+configure({ adapter: new Adapter() });
 
 describe('PrimaryLayout Page', () => {
 	let wrapper;
@@ -99,8 +105,8 @@ describe('PrimaryLayout Page', () => {
 
 			it('should have correct inital state', () => {
 				const initialState = inst.state;
-				const expectedIntialState = null;
-				expect(initialState).toBe(expectedIntialState);
+				const expectedIntialState = {};
+				expect(initialState).toMatchObject(expectedIntialState);
 			});
 
 			it('should not have any inital props', () => {

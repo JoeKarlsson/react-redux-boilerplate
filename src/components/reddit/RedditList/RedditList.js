@@ -31,7 +31,7 @@ class RedditList extends React.Component {
 }
 
 RedditList.propTypes = {
-	redditData: PropTypes.arrayOf(PropTypes.object).isRequired,
+	redditData: PropTypes.arrayOf(PropTypes.object),
 };
 
 RedditList.defaultProps = {

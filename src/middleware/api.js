@@ -12,8 +12,7 @@ function callApi(endpoint, data = {}) {
 	return fetch(BASE_URL + endpoint)
 		.then(response =>
 			response.json()
-				.then(json => ({ json, response })),
-		)
+				.then(json => ({ json, response })))
 		.then(({ json, response }) => {
 			if (!response.ok) {
 				return Promise.reject(text);
@@ -38,18 +37,14 @@ export default store => next => (action) => {
 	const [requestType, successType, errorType] = types;
 
 	return callApi(endpoint, data)
-		.then(
-			response =>
-				next({
-					response,
-					type: successType,
-					data,
-				}),
-		)
-		.catch(
-			error => next({
-				error: error.message || 'There was an error.',
-				type: errorType,
-			}),
-		);
+		.then(response =>
+			next({
+				response,
+				type: successType,
+				data,
+			}))
+		.catch(error => next({
+			error: error.message || 'There was an error.',
+			type: errorType,
+		}));
 };

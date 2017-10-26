@@ -1,17 +1,21 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import {
+	shallow,
+	configure,
+} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import About from './About';
+
+configure({ adapter: new Adapter() });
 
 describe('About Page', () => {
 	let wrapper;
-	let inst;
 
 	beforeEach(() => {
 		wrapper = shallow(
 			<About />,
 		);
-		inst = wrapper.instance();
 	});
 
 	describe('rendering', () => {
@@ -35,15 +39,10 @@ describe('About Page', () => {
 			it('should mount in the full DOM', () => {
 				expect(wrapper.find('.About').length).toBe(1);
 			});
-			it('should have correct inital state', () => {
-				const initialState = inst.state;
-				const expectedIntialState = null;
-				expect(initialState).toBe(expectedIntialState);
-			});
-			it('should not have any inital props', () => {
-				const initialProps = inst.props;
-				const expectedProps = {};
-				expect(initialProps).toEqual(expectedProps);
+			it('should have correct inital instance', () => {
+				const initialInstance = wrapper.instance();
+				const expectedInstance = null;
+				expect(initialInstance).toBe(expectedInstance);
 			});
 		});
 	});

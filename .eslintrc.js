@@ -19,6 +19,12 @@ module.exports = {
 				"indent": ["error", "tab"],
 				"react/jsx-indent": [2, 'tab'],
 				"react/jsx-indent-props": [2, 'tab'],
+				"function-paren-newline": ["error", "consistent"],
+				"jsx-a11y/anchor-is-valid": ['error', {
+					"components": [],
+					"specialLink": [],
+					"aspects": ['noHref', 'invalidHref', 'preferButton']
+				}],
     },
     "env": {
       "browser": true,

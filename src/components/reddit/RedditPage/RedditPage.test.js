@@ -2,8 +2,14 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import {
+	shallow,
+	configure,
+} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import ConnectedRedditPage, { RedditPage } from './RedditPage';
+
+configure({ adapter: new Adapter() });
 
 describe('RedditPage', () => {
 	describe('rendering', () => {
@@ -11,9 +17,7 @@ describe('RedditPage', () => {
 		let inst;
 
 		beforeEach(() => {
-			wrapper = shallow(
-				<RedditPage dispatch={jest.fn()} />,
-			);
+			wrapper = shallow(<RedditPage dispatch={jest.fn()} />);
 			inst = wrapper.instance();
 		});
 
@@ -44,8 +48,8 @@ describe('RedditPage', () => {
 
 			it('should have correct inital state', () => {
 				const initialState = inst.state;
-				const expectedIntialState = null;
-				expect(initialState).toBe(expectedIntialState);
+				const expectedIntialState = {};
+				expect(initialState).toMatchObject(expectedIntialState);
 			});
 
 			it('should not have any inital props', () => {

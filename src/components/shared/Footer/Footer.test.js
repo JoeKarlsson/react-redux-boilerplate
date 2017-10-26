@@ -1,25 +1,29 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import {
+	shallow,
+	configure,
+} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import Footer from './Footer';
 
+configure({ adapter: new Adapter() });
+
 describe('Footer', () => {
 	let wrapper;
-	let inst;
+
+	global.requestAnimationFrame = (callback) => {
+		setTimeout(callback, 0);
+	};
 
 	beforeEach(() => {
-		wrapper = shallow(
-			<Footer />,
-		);
-		inst = wrapper.instance();
+		wrapper = shallow(<Footer />);
 	});
 
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('is rendered', () => {
-				const component = renderer.create(
-					<footer />,
-				);
+				const component = renderer.create(<footer />);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});
@@ -48,16 +52,10 @@ describe('Footer', () => {
 				expect(wrapper.text()).toEqual('Footer');
 			});
 
-			it('should have correct inital state', () => {
-				const initialState = inst.state;
-				const expectedIntialState = null;
-				expect(initialState).toBe(expectedIntialState);
-			});
-
-			it('should not have any inital props', () => {
-				const initialProps = inst.props;
-				const expectedProps = {};
-				expect(initialProps).toMatchObject(expectedProps);
+			it('should have correct inital instance', () => {
+				const initialInstance = wrapper.instance();
+				const expectedInstance = null;
+				expect(initialInstance).toBe(expectedInstance);
 			});
 		});
 	});

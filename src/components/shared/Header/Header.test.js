@@ -1,16 +1,19 @@
 import React from 'react';
 import {
 	shallow,
+	configure,
 } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 import {
 	MemoryRouter,
 } from 'react-router-dom';
 import Header from './Header';
 
+configure({ adapter: new Adapter() });
+
 describe('Footer', () => {
 	let wrapper;
-	let inst;
 
 	beforeEach(() => {
 		wrapper = shallow(
@@ -18,7 +21,6 @@ describe('Footer', () => {
 				<Header />
 			</MemoryRouter>,
 		);
-		inst = wrapper.instance();
 	});
 
 	describe('rendering', () => {
@@ -49,16 +51,10 @@ describe('Footer', () => {
 				expect(wrapper.dive().dive().text()).toContain('React Reddit');
 			});
 
-			it('should have correct inital state', () => {
-				const initialState = inst.state;
+			it('should have correct inital instance', () => {
+				const initialState = wrapper.dive().dive().instance();
 				const expectedIntialState = null;
 				expect(initialState).toBe(expectedIntialState);
-			});
-
-			it('should not have any inital props', () => {
-				const initialProps = inst.props;
-				const expectedProps = {};
-				expect(initialProps).toMatchObject(expectedProps);
 			});
 		});
 	});

@@ -5,30 +5,30 @@ import {
 } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
-import Link from './Link';
+import ErrorBoundary from './ErrorBoundary';
 
 configure({ adapter: new Adapter() });
 
-describe('Footer', () => {
+describe('Error Boundary', () => {
 	let wrapper;
 	let inst;
 
 	beforeEach(() => {
 		wrapper = shallow(
-			<Link page="http://www.instagram.com">
-				Instagram
-			</Link>,
+			<ErrorBoundary>
+				When you buy a lottery ticket, you are investing in the dreams of the winner.
+			</ErrorBoundary>,
 		);
 		inst = wrapper.instance();
 	});
 
 	describe('rendering', () => {
 		describe('initial state', () => {
-			it('is rendered', () => {
+			it('should match the snapshot', () => {
 				const component = renderer.create(
-					<Link page="http://www.instagram.com">
-						Instagram
-					</Link>,
+					<ErrorBoundary>
+						When you buy a lottery ticket, you are investing in the dreams of the winner.
+					</ErrorBoundary>,
 				);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
@@ -38,41 +38,32 @@ describe('Footer', () => {
 				expect(wrapper).toHaveLength(1);
 			});
 
+			it('should render to static HTML', () => {
+				expect(wrapper.text()).toContain('When you buy a lottery ticket, you are investing in the dreams of the winner.');
+			});
+
 			it('should have correct inital state', () => {
 				const initialState = inst.state;
 				const expectedIntialState = {
-					class: 'normal',
+					hasError: false,
 				};
 				expect(initialState).toMatchObject(expectedIntialState);
 			});
 
 			it('should not have any inital props', () => {
 				const initialProps = inst.props;
-				const expectedProps = {};
+				const expectedProps = {
+					children: 'When you buy a lottery ticket, you are investing in the dreams of the winner.',
+				};
 				expect(initialProps).toMatchObject(expectedProps);
 			});
 		});
+	});
 
-		describe('Mouse Over', () => {
-			it('should change the class when hovered', () => {
-				const component = renderer.create(
-					<Link page="https://www.instagram.com">Instagram</Link>,
-				);
-				let tree = component.toJSON();
-				expect(tree).toMatchSnapshot();
-
-				// manually trigger the callback
-				tree.props.onMouseEnter();
-				// re-rendering
-				tree = component.toJSON();
-				expect(tree).toMatchSnapshot();
-
-				// manually trigger the callback
-				tree.props.onMouseLeave();
-				// re-rendering
-				tree = component.toJSON();
-				expect(tree).toMatchSnapshot();
-			});
+	describe('callbacks', () => {
+		it('should only render error message when `hasError` is true', () => {
+			inst.state.hasError = true;
+			wrapper.update();
 		});
 	});
 });

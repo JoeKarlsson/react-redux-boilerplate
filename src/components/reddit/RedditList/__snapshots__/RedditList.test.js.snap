@@ -7,5 +7,37 @@ exports[`Reddit List rendering initial state should match the snapshot 1`] = `
   <h2>
     Reddit List
   </h2>
+  <div
+    className="RedditItem"
+  >
+    <h3>
+      Humans are such apex predators that we think getting scared like prey is fun and entertaining.
+    </h3>
+    <p>
+      Author: 
+      old_and_spicy
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+  <div
+    className="RedditItem"
+  >
+    <h3>
+      The milky way galaxy could be the only galaxy with milkyway bars in it"
+    </h3>
+    <p>
+      Author: 
+      TheGodOfDucks
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
 </div>
 `;
