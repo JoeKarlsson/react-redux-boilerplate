@@ -1,7 +1,7 @@
 ![](http://jpsierens.com/wp-content/uploads/2016/06/react-eco-wp.gif)
 
 
-# Webpack React Redux Boilerplate
+# Rose Hobart
 
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
