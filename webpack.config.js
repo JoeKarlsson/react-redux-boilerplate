@@ -7,7 +7,7 @@ const StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
 	entry: [
-		path.join(__dirname, '/src/entry.js'),
+		path.join(__dirname, '/src/client/entry.js'),
 	],
 	output: {
 		path: path.resolve(__dirname, './dist'),
@@ -21,7 +21,7 @@ module.exports = {
 			allChunks: true,
 		}),
 		new HtmlWebpackPlugin({
-			template: 'src/index.tpl.html',
+			template: 'src/client/index.tpl.html',
 			inject: 'body',
 			filename: 'index.html',
 		}),

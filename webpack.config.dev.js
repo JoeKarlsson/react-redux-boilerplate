@@ -6,7 +6,7 @@ config.devtool = 'eval-source-map';
 
 config.entry = [
 	'webpack-hot-middleware/client?reload=true',
-	path.join(__dirname, '/src/entry.js'),
+	path.join(__dirname, '/src/client/entry.js'),
 ];
 
 config.output = {
