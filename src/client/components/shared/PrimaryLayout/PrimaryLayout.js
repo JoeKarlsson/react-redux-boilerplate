@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 import About from '../../static/about/About';
 import NoMatch from '../../static/noMatch/NoMatch';
 import RedditPage from '../../reddit/RedditPage/RedditPage';
+import '../../../styles/main.scss';
 import './PrimaryLayout.scss';
 
 export const PrimaryLayout = () => {

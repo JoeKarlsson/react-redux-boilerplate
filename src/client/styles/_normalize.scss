@@ -1,0 +1,10 @@
+@import 'normalize/variables';
+
+@import 'normalize/vertical-rhythm';
+
+@import 'normalize/normalize-mixin';
+
+body {
+	font: 100% Helvetica, sans-serif;
+	background-color: #efefef;
+}

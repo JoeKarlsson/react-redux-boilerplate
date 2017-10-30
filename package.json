@@ -53,20 +53,6 @@
       "\\.(css|scss)$": "identity-obj-proxy"
     }
   },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "indentation": "tab",
-      "declaration-block-no-redundant-longhand-properties": [
-        true,
-        {
-          "ignoreShorthands": [
-            "/border/"
-          ]
-        }
-      ]
-    }
-  },
   "keywords": [
     "react",
     "redux",
@@ -122,6 +108,7 @@
     "style-loader": "0.19.x",
     "stylelint": "8.2.x",
     "stylelint-config-standard": "17.0.x",
+    "stylelint-scss": "2.1.x",
     "stylelint-webpack-plugin": "0.9.x",
     "supertest": "3.0.x",
     "webpack": "3.8.x",
