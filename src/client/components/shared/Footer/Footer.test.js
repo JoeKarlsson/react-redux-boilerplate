@@ -23,21 +23,13 @@ describe('Footer', () => {
 	describe('rendering', () => {
 		describe('initial state', () => {
 			it('is rendered', () => {
-				const component = renderer.create(<footer />);
+				const component = renderer.create(<Footer />);
 				const tree = component.toJSON();
 				expect(tree).toMatchSnapshot();
 			});
 
 			it('is rendered correctly', () => {
 				expect(wrapper).toHaveLength(1);
-			});
-
-			it('should render without throwing an error', () => {
-				expect(wrapper.contains(
-					<div className="footer">
-						<h2>Footer</h2>
-					</div>,
-				)).toEqual(true);
 			});
 
 			it('should be selectable by the class `footer`', () => {
@@ -49,7 +41,7 @@ describe('Footer', () => {
 			});
 
 			it('should render to static HTML', () => {
-				expect(wrapper.text()).toEqual('Footer');
+				expect(wrapper.text()).toEqual('site by joe');
 			});
 
 			it('should have correct inital instance', () => {

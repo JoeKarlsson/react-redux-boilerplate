@@ -9,15 +9,13 @@ function callApi(endpoint, data = {}) {
 	const BASE_URL = 'https://www.reddit.com/r/';
 	const { method } = data;
 
-	const myHeaders = new Headers({
-		'Content-Type': 'text/plain',
-		'Access-Control-Allow-Origin': '*',
-		'Access-Control-Allow-Methods': 'GET, PUT, POST',
-	});
-
 	const myInit = {
 		method: 'GET',
-		headers: myHeaders,
+		headers: {
+			'Content-Type': 'text/plain',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'GET, PUT, POST',
+		},
 		mode: 'no-cors',
 		cache: 'default',
 	};

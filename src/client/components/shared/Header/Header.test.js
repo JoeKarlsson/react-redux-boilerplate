@@ -12,7 +12,7 @@ import Header from './Header';
 
 configure({ adapter: new Adapter() });
 
-describe('Footer', () => {
+describe('Header', () => {
 	let wrapper;
 
 	beforeEach(() => {
@@ -40,15 +40,11 @@ describe('Footer', () => {
 			});
 
 			it('should be selectable by the class `header`', () => {
-				expect(wrapper.dive().dive().is('.header')).toBe(true);
+				expect(wrapper.dive().dive().is('.header_bar')).toBe(true);
 			});
 
 			it('should mount in the full DOM', () => {
-				expect(wrapper.dive().dive().find('.header').length).toBe(1);
-			});
-
-			it('should render to static HTML', () => {
-				expect(wrapper.dive().dive().text()).toContain('React Reddit');
+				expect(wrapper.dive().dive().find('.header_bar').length).toBe(1);
 			});
 
 			it('should have correct inital instance', () => {
