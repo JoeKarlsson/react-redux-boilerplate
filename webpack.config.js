@@ -7,6 +7,7 @@ const StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
 	entry: [
+		'whatwg-fetch',
 		path.join(__dirname, '/src/client/entry.js'),
 	],
 	output: {
@@ -25,6 +26,9 @@ module.exports = {
 			inject: 'body',
 			filename: 'index.html',
 		}),
+		// new webpack.ProvidePlugin({
+		// 	fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch',
+		// }),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false,

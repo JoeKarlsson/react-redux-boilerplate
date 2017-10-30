@@ -1,7 +1,7 @@
 ![](http://jpsierens.com/wp-content/uploads/2016/06/react-eco-wp.gif)
 
 
-# Rose Hobart
+# React Redux Webpack Boilerplate
 
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
@@ -74,9 +74,10 @@ Don't hesitate to create a pull request. Every contribution is appreciated. In d
 </table>
 
 
-### LICENSE
+### License
 
 #### [MIT](./LICENSE)
+
 
 [deps]: https://david-dm.org/JoeKarlsson/react-redux-boilerplate/status.svg
 [deps-url]: https://david-dm.org/JoeKarlsson/react-redux-boilerplate

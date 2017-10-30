@@ -1,16 +1,22 @@
 import React from 'react';
 import {
-	Link,
+	NavLink,
 } from 'react-router-dom';
+import './Header.scss';
+
+const activeStyles = {
+	color: 'red',
+};
 
 const Header = () => {
 	return (
-		<div className="header">
-			<h1>React Reddit</h1>
-			<ul role="navigation">
-				<li><Link to="/">Home</Link></li>
-				<li><Link to="/about">About</Link></li>
-			</ul>
+		<div className="header_bar">
+			<header>
+				<NavLink className="header_logo" to="/">Home</NavLink>
+				<ul className="header_nav" role="navigation">
+					<li><NavLink to="/about" activeStyle={activeStyles}>About</NavLink></li>
+				</ul>
+			</header>
 		</div>
 	);
 };

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../../../actions/redditActions';
 import RedditList from '../RedditList/RedditList';
+import ErrorBoundary from '../../shared/ErrorBoundary/ErrorBoundary';
 import './RedditPage.scss';
 
 export class RedditPage extends React.Component {
@@ -15,7 +16,9 @@ export class RedditPage extends React.Component {
 		return (
 			<div className="RedditPage">
 				<h1>Reddit</h1>
-				<RedditList redditData={this.props.redditData} />
+				<ErrorBoundary>
+					<RedditList redditData={this.props.redditData} />
+				</ErrorBoundary >
 			</div>
 		);
 	}

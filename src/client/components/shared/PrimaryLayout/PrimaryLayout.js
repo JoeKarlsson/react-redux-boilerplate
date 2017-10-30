@@ -15,7 +15,7 @@ export const PrimaryLayout = () => {
 	return (
 		<div className="PrimaryLayout">
 			<Header />
-			<div>
+			<div className="app-body">
 				<Switch>
 					<Route exact path="/" component={RedditPage} />
 					<Route path="/about" component={About} />

@@ -2,4 +2,11 @@ $orange: orange;
 
 .PrimaryLayout {
 	background-color: $orange;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+	.app-body {
+		flex: 1;
+	}
 }
