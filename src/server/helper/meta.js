@@ -1,9 +1,13 @@
-// Check to see what dev environment we are in
-const isDeveloping = process.env.NODE_ENV !== 'production';
+const {
+	PORT,
+	NODE_ENV,
+} = process.env;
 
-const isTest = process.env.NODE_ENV === 'test';
+const isDeveloping = NODE_ENV !== 'production';
 
-const port = isDeveloping ? 3000 : process.env.PORT;
+const isTest = NODE_ENV === 'test';
+
+const port = isDeveloping ? 3000 : PORT;
 
 module.exports = {
 	isDeveloping,

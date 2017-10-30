@@ -57,7 +57,8 @@ efficient tooling and cleanest project structure.
 
 Don't hesitate to create a pull request. Every contribution is appreciated. In development you can start the tests by calling `npm test`. Checkout our [contribution README](https://github.com/JoeKarlsson/react-redux-boilerplate/blob/master/CONTRIBUTING.md) for more info.
 
-<h2 align="center">Maintainers</h2>
+
+### Maintainers
 
 <table>
   <tbody>
@@ -72,7 +73,8 @@ Don't hesitate to create a pull request. Every contribution is appreciated. In d
   <tbody>
 </table>
 
-<h2 align="center">LICENSE</h2>
+
+### LICENSE
 
 #### [MIT](./LICENSE)
 
