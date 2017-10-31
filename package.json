@@ -114,8 +114,8 @@
     "webpack": "3.8.x",
     "webpack-dev-middleware": "1.10.x",
     "webpack-dev-server": "2.9.x",
-    "webpack-hot-middleware": "^2.16.1",
-    "whatwg-fetch": "^2.0.3",
+    "webpack-hot-middleware": "2.16.x",
+    "whatwg-fetch": "2.0.x",
     "xmlhttprequest": "1.8.x"
   },
   "devDependencies": {},
