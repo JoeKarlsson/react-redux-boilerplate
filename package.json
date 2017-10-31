@@ -22,7 +22,7 @@
     "stats": "webpack --json > webpack.stats.json",
     "commit": "commit-wizard",
     "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.js --progress --profile --colors",
-    "runProd": "export NODE_ENV=production && export PORT=8081 && node src/server.js"
+    "runProd": "export NODE_ENV=production && export PORT=8081 && node src/server/server.js"
   },
   "jest": {
     "collectCoverageFrom": [

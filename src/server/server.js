@@ -15,7 +15,7 @@ if (meta.isDeveloping && !meta.isTest) {
 	app.use(webpackHotMiddleware(webpackDevConfig.compiler));
 	app.get('*', devResponse);
 } else {
-	app.use(express.static(`${__dirname}/../dist`));
+	app.use(express.static('dist'));
 	app.get('*', prodResponse);
 }
 
