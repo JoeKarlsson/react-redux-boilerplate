@@ -63,7 +63,7 @@ module.exports = {
 					options: {
 						presets: [
 							'react',
-							'es2015',
+							'env',
 						],
 					},
 				},
