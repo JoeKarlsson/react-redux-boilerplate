@@ -120,7 +120,9 @@
     "whatwg-fetch": "2.0.x",
     "xmlhttprequest": "1.8.x"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "favicons-webpack-plugin": "0.0.7"
+  },
   "release": {
     "analyzeCommits": "simple-commit-message"
   },
