@@ -22,7 +22,9 @@
     "stats": "webpack --json > webpack.stats.json",
     "commit": "commit-wizard",
     "postinstall": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.config.js --progress --profile --colors",
-    "runProd": "export NODE_ENV=production && export PORT=8081 && node src/server/server.js"
+    "runProd": "export NODE_ENV=production && export PORT=8081 && node src/server/server.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -118,7 +120,8 @@
     "webpack-dev-server": "2.9.x",
     "webpack-hot-middleware": "2.20.x",
     "whatwg-fetch": "2.0.x",
-    "xmlhttprequest": "1.8.x"
+    "xmlhttprequest": "1.8.x",
+    "snyk": "^1.61.0"
   },
   "devDependencies": {},
   "release": {
@@ -145,5 +148,6 @@
         "npm install --loglevel=error"
       ]
     }
-  }
+  },
+  "snyk": true
 }
