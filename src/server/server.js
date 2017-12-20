@@ -1,7 +1,6 @@
 const express = require('express');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackDevConfig = require('./helper/webpackDevConfig');
-const devResponse = require('./helper/responseDev');
 const prodResponse = require('./helper/responseProd');
 const handleListen = require('./helper/handleListen');
 const log = require('./helper/log');
@@ -13,7 +12,6 @@ if (meta.isDeveloping && !meta.isTest) {
 	app.set('host', 'http://localhost');
 	app.use(webpackDevConfig.middleware);
 	app.use(webpackHotMiddleware(webpackDevConfig.compiler));
-	app.get('*', devResponse);
 } else {
 	app.use(express.static('dist'));
 	app.get('*', prodResponse);

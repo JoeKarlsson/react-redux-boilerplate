@@ -220,11 +220,6 @@
 			dd {
 				margin: 0 0 0 $indent-amount;
 			}
-
-			ol,
-			ul {
-				padding: 0 0 0 $indent-amount;
-			}
 		}
 
 		/**
@@ -329,14 +324,6 @@
 		b,
 		strong {
 			font-weight: inherit;
-		}
-
-		/**
-     * Add the correct font weight in Chrome, Edge, and Safari.
-     */
-
-		b,
-		strong {
 			font-weight: bolder;
 		}
 
