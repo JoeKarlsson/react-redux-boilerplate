@@ -3,6 +3,8 @@
 
 # React Redux Webpack Boilerplate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JoeKarlsson/react-redux-boilerplate.svg)](https://greenkeeper.io/)
+
 [![deps][deps]][deps-url]
 [![Coverage Status][cover]][cover-url]
 [![Build Status][tests]][tests-url]
