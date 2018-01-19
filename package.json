@@ -90,7 +90,7 @@
     "identity-obj-proxy": "3.0.x",
     "immutable": "3.8.x",
     "isomorphic-fetch": "2.2.x",
-    "jest": "~22.0.3",
+    "jest": "~22.1.4",
     "node-sass": "~4.7.2",
     "nyc": "~11.4.1",
     "pre-git": "3.16.x",
