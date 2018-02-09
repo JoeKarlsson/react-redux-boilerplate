@@ -20,3 +20,9 @@ patch:
   'npm:ms:20170412':
     - favicons-webpack-plugin > favicons > node-rest-client > debug > ms:
         patched: '2017-12-19T00:54:26.773Z'
+  'npm:hawk:20160119':
+    - coveralls > log-driver > codecov.io > request > hawk:
+        patched: '2018-02-09T22:32:38.949Z'
+  'npm:request:20160119':
+    - coveralls > log-driver > codecov.io > request:
+        patched: '2018-02-09T22:32:38.949Z'
