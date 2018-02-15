@@ -109,7 +109,7 @@
     "redux-thunk": "2.2.x",
     "sass-loader": "6.0.x",
     "stats-webpack-plugin": "0.6.x",
-    "style-loader": "0.19.x",
+    "style-loader": "~0.20.2",
     "stylelint": "~8.4.0",
     "stylelint-config-standard": "~18.0.0",
     "stylelint-scss": "~2.2.0",
