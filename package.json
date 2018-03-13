@@ -93,7 +93,7 @@
     "jest": "~22.0.3",
     "node-sass": "~4.7.2",
     "nyc": "~11.4.1",
-    "pre-git": "3.16.x",
+    "pre-git": "~3.17.1",
     "prop-types": "15.6.x",
     "react": "~16.2.0",
     "react-addons-test-utils": "15.6.x",
