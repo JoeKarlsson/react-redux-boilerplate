@@ -86,7 +86,7 @@
     "extract-text-webpack-plugin": "3.0.x",
     "favicons-webpack-plugin": "0.0.x",
     "fetch-mock": "5.13.x",
-    "html-webpack-plugin": "2.x.x",
+    "html-webpack-plugin": "^3.0.7",
     "identity-obj-proxy": "3.0.x",
     "immutable": "3.8.x",
     "isomorphic-fetch": "2.2.x",
