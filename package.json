@@ -63,7 +63,7 @@
   "author": "Joe Karlson",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "7.x.x",
+    "autoprefixer": "^8.4.0",
     "babel-core": "6.x.x",
     "babel-jest": "^22.0.3",
     "babel-loader": "7.1.x",
