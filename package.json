@@ -117,7 +117,7 @@
     "supertest": "3.0.x",
     "webpack": "~3.10.0",
     "webpack-dev-middleware": "~2.0.2",
-    "webpack-dev-server": "2.9.x",
+    "webpack-dev-server": "~3.1.4",
     "webpack-hot-middleware": "~2.21.0",
     "whatwg-fetch": "2.0.x",
     "xmlhttprequest": "1.8.x",
