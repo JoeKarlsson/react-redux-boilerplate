@@ -65,7 +65,7 @@
   "dependencies": {
     "autoprefixer": "7.x.x",
     "babel-core": "6.x.x",
-    "babel-jest": "^22.0.3",
+    "babel-jest": "^23.0.0",
     "babel-loader": "7.1.x",
     "babel-preset-env": "1.x.x",
     "babel-preset-react": "6.24.x",
