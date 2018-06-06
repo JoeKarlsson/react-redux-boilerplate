@@ -100,7 +100,7 @@
     "react-dom": "~16.2.0",
     "react-redux": "5.0.x",
     "react-router": "4.2.x",
-    "react-router-dom": "4.2.x",
+    "react-router-dom": "~4.3.0",
     "react-scripts": "1.0.x",
     "react-test-renderer": "^16.0.0-alpha.12",
     "redux": "^3.5.2",
