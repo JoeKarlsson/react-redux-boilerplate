@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.10.1
+version: v1.12.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -20,3 +20,10 @@ patch:
   'npm:ms:20170412':
     - favicons-webpack-plugin > favicons > node-rest-client > debug > ms:
         patched: '2017-12-19T00:54:26.773Z'
+  'npm:lodash:20180130':
+    - favicons-webpack-plugin > favicons > cheerio > lodash:
+        patched: '2018-07-04T02:23:49.948Z'
+    - pre-git > simple-commit-message > inquirer-confirm > inquirer > lodash:
+        patched: '2018-07-04T02:23:49.948Z'
+    - pre-git > simple-commit-message > ggit > lodash:
+        patched: '2018-07-04T02:23:49.948Z'
