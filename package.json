@@ -92,7 +92,7 @@
     "isomorphic-fetch": "2.2.x",
     "jest": "~22.0.3",
     "node-sass": "~4.7.2",
-    "nyc": "~11.4.1",
+    "nyc": "~13.0.1",
     "pre-git": "3.16.x",
     "prop-types": "15.6.x",
     "react": "~16.2.0",
