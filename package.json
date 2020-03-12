@@ -90,9 +90,9 @@
     "identity-obj-proxy": "3.0.x",
     "immutable": "3.8.x",
     "isomorphic-fetch": "2.2.x",
-    "jest": "~22.0.3",
+    "jest": "~24.0.0",
     "node-sass": "~4.7.2",
-    "nyc": "~11.4.1",
+    "nyc": "~15.0.0",
     "pre-git": "3.16.x",
     "prop-types": "15.6.x",
     "react": "~16.2.0",
@@ -121,7 +121,7 @@
     "webpack-hot-middleware": "~2.21.0",
     "whatwg-fetch": "2.0.x",
     "xmlhttprequest": "1.8.x",
-    "snyk": "^1.61.0"
+    "snyk": "^1.290.1"
   },
   "devDependencies": {},
   "release": {
