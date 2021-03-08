@@ -84,7 +84,7 @@
     "eslint-plugin-react": "~7.5.1",
     "express": "4.16.x",
     "extract-text-webpack-plugin": "3.0.x",
-    "favicons-webpack-plugin": "0.0.x",
+    "favicons-webpack-plugin": "0.0.8",
     "fetch-mock": "5.13.x",
     "html-webpack-plugin": "2.x.x",
     "identity-obj-proxy": "3.0.x",
